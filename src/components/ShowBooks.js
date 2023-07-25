@@ -1,19 +1,16 @@
 import React from 'react';
-import Book from './Book';
-import Form from './Form';
+import { useSelector } from 'react-redux';
+import Books from './Books';
 
-const books = [
-  { id: 1, title: 'Book 1', author: 'Author 1' },
-  { id: 2, title: 'Book 2', author: 'Author 2' },
-];
-
-const ShowBooks = () => (
-  <div>
-    {books.map((book) => (
-      <Book key={book.id} title={book.title} author={book.author} />
-    ))}
-    <Form />
-  </div>
-);
+function ShowBooks() {
+  const ShowBook = useSelector((state) => state.bookstore.books);
+  return (
+    <>
+      {ShowBook.map((book) => (
+        <Books key={book.item_id} id={book.item_id} title={book.title} author={book.author} />
+      ))}
+    </>
+  );
+}
 
 export default ShowBooks;
