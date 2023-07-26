@@ -118,7 +118,7 @@ To run tests, run the following command:
 
 <!-- AUTHORS -->
 
-### 👥 Authors 
+### 👥 Authors <a name="authors"></a>
 
 👤 **Uwimbabazi Dorcas**
 
@@ -128,7 +128,7 @@ To run tests, run the following command:
 
 <!-- CONTRIBUTING -->
 
-### 🤝 Contributing 
+### 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
@@ -147,7 +147,7 @@ Feel free to check the [issues page](../../issues/).
 
 <!-- SUPPORT -->
 
-### ⭐️ Show your support
+### ⭐️ Show your support <a name="support"></a>
 
 If you like this project create an issue or comment on 
 my project , i will be glad to hear from you .
@@ -157,7 +157,7 @@ Thank you.
 
 <!-- ACKNOWLEDGEMENTS -->
 
-### 🙏 Acknowledgments 
+### 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 I would like to thank each and everyone who contributed in my project.
 Thank you
