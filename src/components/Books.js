@@ -13,6 +13,7 @@ const Books = () => {
           title={item.title}
           author={item.author}
           category={item.category}
+          itemId={item.itemId}
         />
       ))}
     </div>
