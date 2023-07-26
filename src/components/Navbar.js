@@ -1,17 +1,30 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { MdAccountCircle } from 'react-icons/md';
-import './Navbar.css';
+import { NavLink } from 'react-router-dom';
+import { FaUserAlt } from 'react-icons/fa';
+
+const links = [
+  { path: '/', text: 'Books' },
+  { path: 'categories', text: 'Categories' },
+];
 
 const Navbar = () => (
-  <header>
-    <h2 className="logo">BookStore CMS</h2>
-    <ul className="links">
-      <li><Link to="/">Books</Link></li>
-      <li><Link to="/categories">Categories</Link></li>
-    </ul>
-    <MdAccountCircle className="account" />
-  </header>
+  <nav className="navbar">
+    <div className="menu-nav">
+      <h1>Bookstore CMS</h1>
+      <ul className="menu">
+        {links.map((link) => (
+          <li key={link.text}>
+            <NavLink to={link.path}>
+              {link.text}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div className="icon-nav">
+      <FaUserAlt />
+    </div>
+  </nav>
 );
 
 export default Navbar;

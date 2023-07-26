@@ -1,27 +1,35 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from './Button';
+import { useDispatch } from 'react-redux';
+import styles from '../style/Header.module.css';
+import { removeBook } from '../redux/books/booksSlice';
 
-const Book = ({ title, author }) => (
-  <div>
-    <h3>{title}</h3>
-    <p>
-      By
-      {author}
-    </p>
-    <Button name="Remove" />
-  </div>
-);
+const Book = ({
+  itemId, title, author, category,
+}) => {
+  const dispatch = useDispatch();
 
-Book.propTypes = {
-  title: PropTypes.string,
-  author: PropTypes.string,
+  return (
+    <div className={styles.lesson_panel}>
+      <div className={styles.text}>
+        <span className={styles.category}>{category}</span>
+        <span className={styles.title}>{title}</span>
+        <span className={styles.author}>{author}</span>
+      </div>
+      <div>
+        <button type="button">Comments</button>
+        <button type="button" onClick={() => dispatch(removeBook(itemId))}>Remove</button>
+        <button type="button">Edit</button>
+      </div>
+    </div>
+  );
 };
 
-Book.defaultProps = {
-  title: 'Book title',
-  author: 'Unknown Author',
+Book.propTypes = {
+  itemId: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
 };
 
 export default Book;
