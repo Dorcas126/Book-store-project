@@ -17,7 +17,6 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-- [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
@@ -32,9 +31,11 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Math Magicians: setup] 
+### about-project <a name="about-project"></a>
 
-This is the first project of the Math Magicians application. I will set up the environment and tools needed to develop a React application. In the following projects, I will develop the actual application.
+# 📖 [Bookstore: initialize project with components] 
+
+This project will lay the foundations for  Bookstore website. I will create the user interface using React.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -117,7 +118,7 @@ To run tests, run the following command:
 
 <!-- AUTHORS -->
 
-## 👥 Authors 
+### 👥 Authors <a name="authors"></a>
 
 👤 **Uwimbabazi Dorcas**
 
@@ -127,7 +128,7 @@ To run tests, run the following command:
 
 <!-- CONTRIBUTING -->
 
-## 🤝 Contributing 
+### 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
@@ -146,7 +147,7 @@ Feel free to check the [issues page](../../issues/).
 
 <!-- SUPPORT -->
 
-## ⭐️ Show your support
+### ⭐️ Show your support <a name="support"></a>
 
 If you like this project create an issue or comment on 
 my project , i will be glad to hear from you .
@@ -156,7 +157,7 @@ Thank you.
 
 <!-- ACKNOWLEDGEMENTS -->
 
-## 🙏 Acknowledgments 
+### 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 I would like to thank each and everyone who contributed in my project.
 Thank you
