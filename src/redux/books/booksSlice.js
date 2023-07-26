@@ -1,53 +1,46 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+export const bookItems = [
+  {
+    itemId: 'item1',
+    title: 'The Great Gatsby',
+    author: 'John Smith',
+    category: 'Fiction',
+  },
+  {
+    itemId: 'item2',
+    title: 'Anna Karenina',
+    author: 'Leo Tolstoy',
+    category: 'Fiction',
+  },
+  {
+    itemId: 'item3',
+    title: 'The Selfish Gene',
+    author: 'Richard Dawkins',
+    category: 'Nonfiction',
+  },
+];
+
 const initialState = {
-  books: [
-    {
-      item_id: 'item1',
-      title: 'The Great Gatsby',
-      author: 'John Smith',
-      category: 'Fiction',
-    },
-    {
-      item_id: 'item2',
-      title: 'Anna Karenina',
-      author: 'Leo Tolstoy',
-      category: 'Fiction',
-    },
-    {
-      item_id: 'item3',
-      title: 'The Selfish Gene',
-      author: 'Richard Dawkins',
-      category: 'Nonfiction',
-    },
-  ],
+  books: bookItems,
+  isLoading: false,
 };
 
-const generateUniqueId = () => new Date().getTime().toString(36);
-
 const bookSlice = createSlice({
-  name: 'bookstore',
+  name: 'book',
   initialState,
   reducers: {
     addBook: (state, action) => {
-      const { title, author } = action.payload;
-      const bookObject = {
-        item_id: generateUniqueId(),
-        title,
-        author,
-        category: 'Fiction',
-      };
-      state.books.push(bookObject);
+      const book = action.payload;
+      state.books.push(book);
     },
     removeBook: (state, action) => {
-      const idToRemove = action.payload.id;
-      return {
-        ...state,
-        books: state.books.filter((book) => book.item_id !== idToRemove),
-      };
+      const id = action.payload;
+      state.books = state.books.filter((book) => book.itemId !== id);
     },
   },
 });
 
 export const { addBook, removeBook } = bookSlice.actions;
+
 export default bookSlice.reducer;

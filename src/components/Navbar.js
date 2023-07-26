@@ -1,55 +1,30 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { MdAccountCircle } from 'react-icons/md';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { FaUserAlt } from 'react-icons/fa';
 
-const NavBar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const links = [
+  { path: '/', text: 'Books' },
+  { path: 'categories', text: 'Categories' },
+];
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const renderMobileMenu = () => {
-    if (isOpen) {
-      return (
-        <div className="mobile-menu">
-          <FontAwesomeIcon onClick={toggleMenu} className="close-button" icon={faTimes} />
-          <ul>
-            <li>
-              <Link to="/" onClick={toggleMenu} className="links-mobile">Home</Link>
-            </li>
-            <li>
-              <Link to="/categories" onClick={toggleMenu} className="links-mobile">Categories</Link>
-            </li>
-          </ul>
-        </div>
-      );
-    }
-    return null;
-  };
-
-  return (
-    <div className="navbar">
-      <h1>BookStore CMS</h1>
-      <div className="navbar-menu">
-        <ul>
-          <li>
-            <Link to="/" className="links-desktop">BOOKS</Link>
+const Navbar = () => (
+  <nav className="navbar">
+    <div className="menu-nav">
+      <h1>Bookstore CMS</h1>
+      <ul className="menu">
+        {links.map((link) => (
+          <li key={link.text}>
+            <NavLink to={link.path}>
+              {link.text}
+            </NavLink>
           </li>
-          <li>
-            <Link to="/categories" className="links-desktop">CATEGORIES</Link>
-          </li>
-        </ul>
-      </div>
-      <FontAwesomeIcon onClick={toggleMenu} icon={faBars} className="mobile-hamburger" />
-      {renderMobileMenu()}
-      <div className="profile-icon">
-        <MdAccountCircle />
-      </div>
+        ))}
+      </ul>
     </div>
-  );
-};
+    <div className="icon-nav">
+      <FaUserAlt />
+    </div>
+  </nav>
+);
 
-export default NavBar;
+export default Navbar;
