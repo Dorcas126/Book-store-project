@@ -5,7 +5,7 @@
   overflow-y: scroll;
 }
 
-Books.js styling
+/* books.js styling  */
 
 .list::-webkit-scrollbar {
   display: none;
@@ -247,4 +247,3 @@ input::placeholder {
   letter-spacing: 0.5px;
   margin-right: -78px;
 }
-
