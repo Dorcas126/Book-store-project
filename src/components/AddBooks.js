@@ -29,32 +29,38 @@ const AddBooks = () => {
     <div className={styles.add_form}>
       <h2>ADD NEW BOOK</h2>
       <div className={styles.form}>
-        <input
-          type="text"
-          value={title}
-          className={styles.input_title}
-          onChange={(e) => setTitle(e.target.value)}
-          placeholder="Book title"
-        />
-        <input
-          type="text"
-          value={author}
-          className={styles.input_author}
-          onChange={(e) => setAuthor(e.target.value)}
-          placeholder="Author"
-        />
-        <select
-          value={category}
-          className={styles.input_category}
-          onChange={(e) => setCategory(e.target.value)}
-        >
-          <option value="Action">Action</option>
-          <option value="Fiction">Fiction</option>
-          <option value="Nonfiction">Nonfiction</option>
-        </select>
-        <button type="button" onClick={addNew} className={styles.btn_submit}>
-          ADD BOOK
-        </button>
+        <div>
+          <input
+            type="text"
+            value={title}
+            className={styles.input_title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Book title"
+          />
+          <input
+            type="text"
+            value={author}
+            className={styles.input_author}
+            onChange={(e) => setAuthor(e.target.value)}
+            placeholder="Author"
+          />
+        </div>
+        <div>
+          <select
+            value={category}
+            className={styles.input_category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            <option value="Action">Action</option>
+            <option value="Fiction">Fiction</option>
+            <option value="Nonfiction">Nonfiction</option>
+          </select>
+        </div>
+        <div className={styles.ekpsini}>
+          <button type="button" onClick={addNew} className={styles.btn_submit}>
+            ADD BOOK
+          </button>
+        </div>
       </div>
     </div>
   );
