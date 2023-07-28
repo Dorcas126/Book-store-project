@@ -30,32 +30,40 @@ const Book = ({ books }) => {
               <button type="button">Comments</button>
             </li>
             <li>
-              <button type="button" onClick={handleDelete}>Remove</button>
+              <button type="button" onClick={handleDelete}>
+                Remove
+              </button>
             </li>
             <li>
               <button type="button">Edit</button>
             </li>
           </ul>
         </div>
-        <div className={styles.progress}>
-          <CircularProgressbar value={progressText} className={styles.progress_pic} />
-          <div className={styles.progress_content}>
-            <span className={styles.progress_text}>
-              {progressText}
-              %
+        <div className={styles.raph}>
+          <div className={styles.progress}>
+            <CircularProgressbar
+              value={progressText}
+              className={styles.progress_pic}
+            />
+            <div className={styles.progress_content}>
+              <span className={styles.progress_text}>
+                {progressText}
+                %
+              </span>
+              <span className={styles.progress_complete}>Completed</span>
+            </div>
+          </div>
+          <div className={styles.current}>
+            <span className={styles.current_1}>current chapter</span>
+            <span className={styles.chapter}>
+              Chapter
+              {chapterNumber}
             </span>
-            <span className={styles.progress_complete}>Completed</span>
+            <button type="button" className={styles.btn_upgrade}>
+              update progress
+            </button>
           </div>
         </div>
-      </main>
-      <main className={styles.current}>
-        <span className={styles.current_1}>current chapter</span>
-        <span className={styles.chapter}>
-          Chapter
-          {' '}
-          {chapterNumber}
-        </span>
-        <button type="button" className={styles.btn_upgrade}>update progress</button>
       </main>
     </section>
   );
